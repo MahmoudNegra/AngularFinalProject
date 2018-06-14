@@ -1,0 +1,38 @@
+
+<div class=" mt-1" >
+  <a name="" id="" class="text  text-outline-info" href="#" [routerLink]="['/add']" role="button">Ouvrir compte</a>
+</div>
+
+<div class="card mt-4" >
+  <div class="card-header text-white bg-primary ">
+    <h5 class='my-2'>Liste des comptes</h5>
+  </div>
+  <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Numéro</th>
+            <th>Propriétaire</th>
+            <th>Solde</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let c of data'>
+            <td scope="row">{{c.numero}}</td>
+            <td>{{c.propriotaire}}</td>
+            <td>{{c.solde}}</td>
+            <td class="">
+              <button type="button" class="btn btn-info  ml-1">Détails</button>
+              <button type="button" class="btn btn-secondary ml-1">Edit</button>
+              <button type="button" class="btn btn-danger  ml-1" [routerLink]="['/delete/'+c.numero]">Delete</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>

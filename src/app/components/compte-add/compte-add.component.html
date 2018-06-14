@@ -1,0 +1,48 @@
+<form class="" #f ="ngForm" (ngSubmit)="c_ouvrirCompte()">
+  <div class="form-group">
+      <label for="numero">Numéro du compte</label>
+      <input type="text"
+
+            name="numero"
+            id="numero"
+
+            class="form-control"
+             required
+            [(ngModel)]="c_cpt.numero"
+            #t_numero="ngModel">
+    <div class="alert alert-danger"  *ngIf="t_numero.touched && !t_numero.valid">Le numéro est obligatoire </div>
+
+   <!-- TODO: This is for server side, there is another version for browser defaults -->
+  </div>
+<div class="form-group">
+    <label for="proprietaire">Nom du proprietaire</label>
+      <input type="text"
+            name="proprietaire"
+            id="proprietaire"
+            class="form-control" required
+            [(ngModel)]="c_cpt.propriotaire">
+    <div class="text text-danger">
+
+    </div>
+
+</div>
+<div class="form-group">
+    <label for="solde">solde initial</label>
+    <input type="number"
+          name="solde"
+          id="solde"
+          class="form-control" required
+          [(ngModel)]="c_cpt.solde"
+          #t_solde="ngModel">
+          <div class="alert alert-danger"  *ngIf="t_solde.touched && !t_solde.valid">Le solde est obligatoire </div>
+</div>
+<div class="form-group">
+    <button type="submit" class="btn  btn-primary" [disabled]="!f.valid">Ouvrir ce compte</button>
+
+
+</div>
+
+
+<a name="" id="" class="btn btn-outline-link" href="#" [routerLink]="['/list']" role="button">return List</a>
+
+
